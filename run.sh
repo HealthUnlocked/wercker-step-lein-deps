@@ -1,7 +1,9 @@
+mkdir -p ~/.m2/repository
+
 # Restore previously cached libraries
-cp $WERCKER_CACHE_DIR/lein-deps ~/.m2/repository/
+cp -r $WERCKER_CACHE_DIR/lein-deps ~/.m2/repository/
 
 lein deps
 
 # Cache updated libraries
-cp ~/.m2/repository $WERCKER_CACHE_DIR/lein-deps
+cp -r ~/.m2/repository $WERCKER_CACHE_DIR/lein-deps
